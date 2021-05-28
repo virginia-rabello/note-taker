@@ -6,13 +6,13 @@ const crypto = require('crypto');
 const app = express();
 const PORT = 3001;
 
-const {notes} = require('./db/db.json'); 
+const {notes} = require('db/db.json'); 
 
 function createNewNote(body, notesArray){
     const note = body;
     notesArray.push(note);
     fs.writeFileSync(
-        path.join(__dirname, './db/db.json'),
+        path.join(__dirname, 'db/db.json'),
         JSON.stringify({ notes }, null, 2)
       );
     return note;

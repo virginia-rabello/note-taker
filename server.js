@@ -30,7 +30,7 @@ function deleteNote(id, notesArray){
     let index = findNoteIndex(id,notesArray);
     notesArray.splice(index, 1);
     fs.writeFileSync(
-        path.join(__dirname, './db/db.json'),
+        path.join(__dirname, 'db/db.json'),
         JSON.stringify({ notes }, null, 2)
       );
      return id;
